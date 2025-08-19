@@ -1,0 +1,25 @@
+{
+  "name": "devtender_backend",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [
+    "javascript",
+    "nodejs",
+    "express",
+    "js",
+    "mongo",
+    "db",
+    "rest",
+    "api"
+  ],
+  "license": "ISC",
+  "author": "Razik Khan",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/app.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
