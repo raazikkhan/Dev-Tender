@@ -2,15 +2,27 @@ const express = require("express");
 
 const app = express();
 
-app.use("/", (req, res) => {
-  res.send("hello node world");
-});
-
+// use for testing purposes
 app.use("/test", (req, res) => {
   res.send("Test check route");
 });
-app.get("/about", (req, res) => {
-  res.send("About Page");
+
+// all type of https handlers
+
+app.get("/", (res, req) => {
+  res.send("welcome to the home page");
+});
+app.get("/user", (req, res) => {
+  res.send("User data fetched");
+});
+
+app.post("/user", (req, res) => {
+  console.log(req.body);
+  res.send("User data posted");
+});
+
+app.delete("/user", (req, res) => {
+  res.send("User data deleted Successfully");
 });
 
 app.listen(7777, () => {
