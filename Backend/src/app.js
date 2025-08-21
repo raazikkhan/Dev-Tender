@@ -2,6 +2,22 @@ const express = require("express");
 
 const app = express();
 
+app.get(
+  "/users",
+  (req, res, next) => {
+    //res.send("users first response");
+    next();
+  },
+  // Middleware function
+  (req, res, next) => {
+    //res.send("users Second Response");
+    next();
+  },
+  (req, res) => {
+    res.send("users Third Response");
+  }
+);
+
 // use for testing purposes
 /*app.use("/test", (req, res) => {
   res.send("Test check route");
@@ -27,7 +43,7 @@ app.delete("/user", (req, res) => {
 
 // Create a CURD API for a user
 
-app.use(express.json()); // Middleware to parse JSON bodies
+/* app.use(express.json()); // Middleware to parse JSON bodies
 
 // deme data
 let users = [
@@ -97,7 +113,7 @@ app.delete("/users/:id", (req, res) => {
 // 404 fallback
 app.use((req, res) => {
   res.status(404).json({ message: "Route not found" });
-});
+}); */
 
 app.listen(7777, () => {
   console.log("Server is running on port 7777");
