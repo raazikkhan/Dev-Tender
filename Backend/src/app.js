@@ -109,6 +109,12 @@ app.use((req, res) => {
   res.status(404).json({ message: "Route not found" });
 }); */
 
+// Error Handling Middleware
+// Always define error handling middleware after all other routes
+app.use("/", (err, req, res, next) => {
+  res.status(500).send("Internal Server Error: ");
+});
+
 app.listen(7777, () => {
   console.log("Server is running on port 7777");
 });
