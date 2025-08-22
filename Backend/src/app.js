@@ -2,21 +2,15 @@ const express = require("express");
 
 const app = express();
 
-app.get(
-  "/users",
-  (req, res, next) => {
-    //res.send("users first response");
-    next();
-  },
-  // Middleware function
-  (req, res, next) => {
-    //res.send("users Second Response");
-    next();
-  },
-  (req, res) => {
-    res.send("users Third Response");
-  }
-);
+const { adminAuth, userAuth } = require("./middleware/Auth");
+
+app.get("/admin", adminAuth, (req, res) => {
+  res.send("admin authenticated successfully");
+});
+
+app.get("/user", userAuth, (req, res) => {
+  res.send("user authenticated successfully");
+});
 
 // use for testing purposes
 /*app.use("/test", (req, res) => {
