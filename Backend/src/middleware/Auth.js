@@ -16,6 +16,7 @@ const adminAuth = (req, res, next) => {
 };
 
 // User authentication middleware
+//Middleware function is used to authenticate users before allowing them to access certain routes or resources in a web application.
 
 const userAuth = (res, req, next) => {
   console.log("user authentication middleware called");
