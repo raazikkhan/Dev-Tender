@@ -79,4 +79,4 @@ Contributions are welcome! Feel free to fork the repository and submit pull requ
 ## 📫 Contact
 
 👨‍💻 **Author:** [Razik Khan](https://github.com/raazikkhan)  
-📧 **Email:** sharadindudas774@gmail.com
+📧 **Email:** mdrazikkhan779@gmail.com
